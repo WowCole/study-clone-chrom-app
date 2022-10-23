@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum App</title>
   </head>
+  <div id="bgimg"></div>
   <body>
     <form class="hidden" id="login-form">
       <input
@@ -17,19 +18,54 @@
       />
       <button>Log In</button>
     </form>
-    <h2 id="clock">00:00:00</h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <form action="" id="todo-form">
-      <input type="text" placeholder="Write a TO Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span> </span>
-      <span> </span>
+    <div class="top-screen">
+      <div class="top-screen__search">
+        <h3 class="top-screen__search-links">Links</h3>
+        <div class="top-screen__search-input">
+          <span><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input type="text" />
+          <span class="search-icons"></span>
+        </div>
+      </div>
+      <div class="top-screen__weather">
+        <div id="weather">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
+
+    <div class="main-screen">
+      <div class="upper"></div>
+      <h2 id="clock">00:00</h2>
+      <h1 id="greeting" class="hidden"></h1>
+      <!-- <form action="" id="todo-form">
+      <input type="text" placeholder="Write a TO Do and Press Enter" required />
+    </form> -->
+      <div class="focus">
+        <h2>What is your main focus for today?</h2>
+        <form action="" class="focus-form">
+          <input type="text" class="focus-form__input" />
+        </form>
+      </div>
+    </div>
+
+    <div class="bottom-screen">
+      <div class="bottom-screen__left">
+        <div class="settings">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+      </div>
+      <div id="quote">
+        <span> </span>
+        <span> </span>
+      </div>
+      <div class="bottom-screen__right">
+        <div class="todo">
+          Todo
+          <ul id="todo-list"></ul>
+        </div>
+      </div>
     </div>
 
     <script src="js/greetings.js"></script>
@@ -38,5 +74,9 @@
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script
+      src="https://kit.fontawesome.com/218181cbb1.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

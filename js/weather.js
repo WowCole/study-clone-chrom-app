@@ -9,7 +9,9 @@ function onGeoOk(position) {
       const weatherContainer = document.querySelector(
         "#weather span:first-child"
       );
-      const cityContainer = document.querySelector("#weather span:last-child");
+      const cityContainer = document.querySelector(
+        ".top-screen .top-screen__weather #weather span:last-child"
+      );
       cityContainer.innerText = data.name;
       weatherContainer.innerText = `${data.weather[0].main} / ${data.main.temp}`;
     });
