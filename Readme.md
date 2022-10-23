@@ -172,3 +172,29 @@ console.log(typeof "15", typeof paresInt("15"))
 
 - `isNaN()`: is this not number?
 - ``
+
+#### JS can modify html in console
+
+#### some grammers!!
+
+##### `console.log()`
+
+##### `console.dir()`
+
+##### `getElements`
+
+```
+
+```
+
+##### `querySelector()`
+
+```
+
+```
+
+##### `Event`
+
+```
+
+```
