@@ -1,6 +1,6 @@
 const USERNAME_KEY = "username";
 const greeting = document.querySelector("#greeting");
-const loginForm = document.querySelector("#login-form");
+const loginForm = document.querySelector(".login-form");
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 const time = document.querySelector("#clock").innerText.substr(0, 2);
 const screens = document.querySelectorAll(
@@ -24,7 +24,7 @@ function SayHello(username) {
 }
 function onLonginSubmit(event) {
   event.preventDefault();
-  const username = document.querySelector("#login-form input").value;
+  const username = document.querySelector(".login-form input").value;
   localStorage.setItem(USERNAME_KEY, username);
   SayHello(username);
   loginForm.classList.add("hidden");
