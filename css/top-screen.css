@@ -11,22 +11,38 @@
 .top-screen__search {
   display: flex;
   align-items: center;
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 500;
 }
 .top-screen__search-links {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .top-screen__search-input {
   display: flex;
   align-items: center;
+  border-bottom: none;
+  height: 35px;
+  opacity: 0.6;
 }
-
+.top-screen__search-input:hover {
+  opacity: 0.8;
+  border-bottom: 2px solid white;
+}
 .top-screen__search-input input {
   margin: 0px 5px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
+  outline: none;
+  border: none;
+  height: 35px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
 }
+.top-screen__search-input:has(input:focus) {
+  border-bottom: 2px solid white;
+  opacity: 1;
+}
+
 .top-screen__search-input .search-icons {
   width: 10px;
   height: 10px;
@@ -42,4 +58,8 @@
 
 .top-screen__weather span:last-child {
   font-size: 10px;
+}
+.fa-magnifying-glass {
+  font-size: 15px;
+  font-weight: 700;
 }
