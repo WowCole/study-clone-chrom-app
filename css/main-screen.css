@@ -44,3 +44,28 @@
 .focus-form__input:focus {
   outline: none;
 }
+
+.upper {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.linkPopUp {
+  padding: 20px;
+  display: flex;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 60px;
+  left: 50px;
+  border-radius: 0px 15px 15px 15px;
+  animation: popUp 0.2s ease-out;
+}
+@keyframes popUp {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+}
