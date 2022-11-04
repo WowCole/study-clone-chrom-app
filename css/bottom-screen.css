@@ -41,6 +41,6 @@
 .todo {
   display: flex;
   justify-content: flex-end;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
 }

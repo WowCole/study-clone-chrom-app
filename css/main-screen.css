@@ -17,34 +17,6 @@
 .upper {
   height: 33%;
 }
-.focus {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 33%;
-}
-.focus h2 {
-  font-size: 35px;
-  margin-bottom: 35px;
-  font-weight: 500;
-}
-.focus-form {
-  width: 80%;
-}
-
-.focus-form__input {
-  width: 100%;
-  font-size: 25px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  border-bottom: 3px solid white;
-}
-.focus-form__input:focus {
-  outline: none;
-}
-
 .upper {
   display: flex;
   box-sizing: border-box;
@@ -68,4 +40,80 @@
     top: 50px;
     opacity: 0;
   }
+}
+
+.lower {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.todoPopUp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  position: absolute;
+  width: 300px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 60px;
+  right: 50px;
+  border-radius: 15px 15px 0px 15px;
+  animation: popUp 0.2s ease-out;
+  align-items: center;
+}
+@keyframes popUp {
+  from {
+    bottom: 50px;
+    opacity: 0;
+  }
+}
+
+.todo-form {
+  position: absolute;
+  bottom: 20px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  margin-bottom: 50px;
+  align-items: flex-start;
+}
+
+.todo-form input {
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border: none;
+  color: rgba(195, 196, 198, 1);
+  font-size: 20px;
+}
+.todoPopUp h4 {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.todo-list li {
+  margin-top: 10px;
+}
+
+.todo-list button {
+  background-color: white;
+  border: none;
+  margin-right: 5px;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid white;
+}
+
+.login-form h2 {
+  font-size: 50px;
 }

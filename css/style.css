@@ -2,7 +2,7 @@
 @import "top-screen.css";
 @import "main-screen.css";
 @import "bottom-screen.css";
-
+@import "focus.css";
 * {
   box-sizing: border-box;
 }

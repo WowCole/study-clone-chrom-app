@@ -1,6 +1,6 @@
-const toDoForm = document.querySelector("#todo-form");
-const toDoInput = document.querySelector("#todo-form input");
-const toDoList = document.querySelector("#todo-list");
+const toDoForm = document.querySelector(".todo-form");
+const toDoInput = document.querySelector(".todo-form input");
+const toDoList = document.querySelector(".todo-list");
 let toDos = [];
 
 function saveToDos() {
@@ -19,12 +19,11 @@ function paintToDo(newTodoObj) {
   li.id = newTodoObj.id;
   const span = document.createElement("span");
   span.innerText = newTodoObj.text;
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
-  li.appendChild(span);
-
+  const button = document.createElement("input");
+  button.type = "checkbox";
+  button.addEventListener("change", deleteToDo);
   li.appendChild(button);
+  li.appendChild(span);
   toDoList.appendChild(li);
 }
 
@@ -50,3 +49,11 @@ if (savedToDos !== null) {
   parsedToDos.forEach(paintToDo);
   toDos = parsedToDos;
 }
+const toDoPopUp = document.querySelector(".todoPopUp");
+const toDoText = document.querySelector(".todo");
+
+function popUpToDo() {
+  toDoPopUp.classList.toggle("hidden");
+}
+
+toDoText.addEventListener("click", popUpToDo);
