@@ -10,9 +10,12 @@ const resetbtn = document.querySelector(".settings");
 
 function onClickResetbtn() {
   localStorage.removeItem("username");
+  localStorage.removeItem("focus");
+  localStorage.removeItem("todos");
   loginForm.classList.remove("hidden");
   screens.forEach((element) => {
     element.classList.add("hidden");
+    location.reload();
   });
   document.querySelector(".login-form input").value = "";
 }

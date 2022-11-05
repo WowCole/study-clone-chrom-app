@@ -9,6 +9,7 @@ const todayFocusText = document.querySelector(".today-focus h2");
 const todayFocusCheck = document.querySelector(".today-focus input");
 if (savedFocus != null) {
   drawingFocus();
+  todayFocusText.innerText = savedFocus;
 }
 
 function drawingFocus() {
