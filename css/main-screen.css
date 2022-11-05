@@ -15,12 +15,10 @@
   font-weight: 700;
 }
 .upper {
-  height: 33%;
-}
-.upper {
   display: flex;
   box-sizing: border-box;
   width: 100%;
+  height: 33%;
 }
 
 .linkPopUp {

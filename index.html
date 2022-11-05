@@ -11,16 +11,19 @@
   <body>
     <form class="login-form hidden">
       <h2>What is your name?</h2>
-      <input required maxlength="15" type="text" placeholder="" />
+      <input required maxlength="15" type="text" />
     </form>
     <div class="top-screen">
       <div class="top-screen__search">
         <h3 class="top-screen__search-links">Links</h3>
-        <div class="top-screen__search-input">
+        <form class="top-screen__search-input">
           <span><i class="fa-solid fa-magnifying-glass"></i></span>
           <input type="text" />
-          <span class="search-icons"></span>
-        </div>
+          <select name="WhichSearch" class="search-select">
+            <option id="google" value="google">Google</option>
+            <option id="naver" value="naver">Naver</option>
+          </select>
+        </form>
       </div>
       <div class="top-screen__weather">
         <div id="weather">
@@ -33,7 +36,13 @@
     <div class="main-screen">
       <div class="upper">
         <span class="linkPopUp hidden">
-          <span><i class="fa-brands fa-chrome"></i> Chrome Tab</span>
+          <a
+            href="https://www.google.co.kr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span><i class="fa-brands fa-chrome"></i> Chrome Tab</span>
+          </a>
         </span>
       </div>
       <h2 id="clock">00:00</h2>
@@ -63,16 +72,16 @@
 
     <div class="bottom-screen">
       <div class="bottom-screen__left">
-        <div class="settings">
-          <i class="fa-solid fa-gear"></i>
-        </div>
+        <span class="settings">
+          <i class="fa-solid fa-gear"> Reset user</i>
+        </span>
       </div>
       <div id="quote">
         <span> </span>
         <span> </span>
       </div>
       <div class="bottom-screen__right">
-        <div class="todo">Todo</div>
+        <div class="todo">Todo PopUp</div>
       </div>
     </div>
 
@@ -84,6 +93,8 @@
     <script src="js/weather.js"></script>
     <script src="js/links.js"></script>
     <script src="js/focus.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/reset.js"></script>
     <script
       src="https://kit.fontawesome.com/218181cbb1.js"
       crossorigin="anonymous"

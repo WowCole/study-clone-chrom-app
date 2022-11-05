@@ -12,16 +12,10 @@ if (savedFocus != null) {
 }
 
 function drawingFocus() {
-  todayFocusText.innerText = savedFocus;
   document.querySelector(".focus h2").classList.toggle("hidden");
   document.querySelector(".focus h4").classList.toggle("hidden");
   focusForm.classList.toggle("hidden");
   todayFocus.classList.toggle("hidden");
-  if (savedFocus == null) {
-    todayFocusText.innerText = "";
-  } else {
-    todayFocusText.innerText = savedFocus;
-  }
 }
 
 function onFocusSubmit(event) {
@@ -34,6 +28,7 @@ function onFocusSubmit(event) {
 function deleteFocus(event) {
   event.preventDefault();
   localStorage.removeItem(FOCUS_KEY);
+  focusInput.value = "";
   drawingFocus();
 }
 function onCheck() {

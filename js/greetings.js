@@ -6,6 +6,18 @@ const time = document.querySelector("#clock").innerText.substr(0, 2);
 const screens = document.querySelectorAll(
   ".top-screen, .main-screen, .bottom-screen"
 );
+const resetbtn = document.querySelector(".settings");
+
+function onClickResetbtn() {
+  localStorage.removeItem("username");
+  loginForm.classList.remove("hidden");
+  screens.forEach((element) => {
+    element.classList.add("hidden");
+  });
+  document.querySelector(".login-form input").value = "";
+}
+resetbtn.addEventListener("click", onClickResetbtn);
+
 if (savedUsername === null) {
   loginForm.classList.remove("hidden");
   loginForm.addEventListener("submit", onLonginSubmit);
