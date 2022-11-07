@@ -45,14 +45,19 @@ function onLonginSubmit(event) {
   loginForm.classList.add("hidden");
 }
 
+function getTime() {
+  console.log(time);
+}
 function getUsername(username) {
+  const time = document.querySelector("#clock").innerText.substr(0, 2);
+
   const savedUsername = localStorage.getItem(USERNAME_KEY);
-  if (18 <= time < 24 || 0 <= time < 6) {
+  if (18 < time || time < 5) {
     document.querySelector(
       "#greeting"
     ).innerText = `Good evening, ${savedUsername}`;
     greeting.classList.remove("hidden");
-  } else if (06 <= time < 12) {
+  } else if (5 < time && time < 13) {
     document.querySelector(
       "#greeting"
     ).innerText = `Good morning, ${savedUsername}!`;
@@ -64,7 +69,5 @@ function getUsername(username) {
     greeting.classList.remove("hidden");
   }
 }
-function getTime() {
-  console.log(time);
-}
+
 setInterval(getUsername, 10000);
