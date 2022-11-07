@@ -32,10 +32,14 @@ if (savedUsername === null) {
 }
 function SayHello(username) {
   if (savedUsername === null) {
-    document.querySelector("#greeting").innerText = `Hello ${username}!`;
+    document.querySelector(
+      "#greeting"
+    ).innerText = `Nice to meet you ${username}!`;
     greeting.classList.remove("hidden");
     screens.forEach((element) => {
       element.classList.remove("hidden");
+
+      setInterval(getUsername, 3000);
     });
   } else {
     document.querySelector("#greeting").innerText = `Hello ${savedUsername}!`;
@@ -50,13 +54,14 @@ function onLonginSubmit(event) {
   event.preventDefault();
   const username = document.querySelector(".login-form input").value;
   localStorage.setItem(USERNAME_KEY, username);
-  SayHello(username);
+  const savedUsername = localStorage.getItem(USERNAME_KEY);
+  setInterval(SayHello(savedUsername), 100);
   loginForm.classList.add("hidden");
 }
 
 function getUsername(username) {
   const time = document.querySelector("#clock").innerText.substr(0, 2);
-
+  const savedUsername = localStorage.getItem(USERNAME_KEY);
   if (18 < time || time < 5) {
     document.querySelector(
       "#greeting"
