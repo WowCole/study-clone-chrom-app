@@ -21,21 +21,21 @@ function onClickResetbtn() {
 }
 resetbtn.addEventListener("click", onClickResetbtn);
 
-if (savedUsername === null) {
-  loginForm.classList.remove("hidden");
-  loginForm.addEventListener("submit", onLonginSubmit);
-  screens.forEach((element) => {
-    element.classList.add("hidden");
-  });
-} else {
-  getUsername(savedUsername);
-}
 function SayHello(username) {
-  document.querySelector("#greeting").innerText = `Hello ${username}!`;
-  greeting.classList.remove("hidden");
-  screens.forEach((element) => {
-    element.classList.remove("hidden");
-  });
+  if (savedUsername === null) {
+    document.querySelector("#greeting").innerText = `Hello ${username}!`;
+    greeting.classList.remove("hidden");
+    screens.forEach((element) => {
+      element.classList.remove("hidden");
+    });
+  } else {
+    document.querySelector("#greeting").innerText = `Hello ${savedUsername}!`;
+    greeting.classList.remove("hidden");
+    screens.forEach((element) => {
+      element.classList.remove("hidden");
+      setInterval(getUsername, 5000);
+    });
+  }
 }
 function onLonginSubmit(event) {
   event.preventDefault();
@@ -48,7 +48,6 @@ function onLonginSubmit(event) {
 function getUsername(username) {
   const time = document.querySelector("#clock").innerText.substr(0, 2);
 
-  const savedUsername = localStorage.getItem(USERNAME_KEY);
   if (18 < time || time < 5) {
     document.querySelector(
       "#greeting"
@@ -67,4 +66,4 @@ function getUsername(username) {
   }
 }
 
-setInterval(getUsername, 10000);
+SayHello();
