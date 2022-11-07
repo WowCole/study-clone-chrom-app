@@ -45,9 +45,6 @@ function onLonginSubmit(event) {
   loginForm.classList.add("hidden");
 }
 
-function getTime() {
-  console.log(time);
-}
 function getUsername(username) {
   const time = document.querySelector("#clock").innerText.substr(0, 2);
 
@@ -68,6 +65,9 @@ function getUsername(username) {
     ).innerText = `Good afternoon, ${savedUsername}!`;
     greeting.classList.remove("hidden");
   }
+}
+function getTime() {
+  console.log(time);
 }
 
 setInterval(getUsername, 10000);
