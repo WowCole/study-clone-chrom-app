@@ -66,8 +66,5 @@ function getUsername(username) {
     greeting.classList.remove("hidden");
   }
 }
-function getTime() {
-  console.log(time);
-}
 
 setInterval(getUsername, 10000);
