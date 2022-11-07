@@ -33,7 +33,7 @@ function SayHello(username) {
     greeting.classList.remove("hidden");
     screens.forEach((element) => {
       element.classList.remove("hidden");
-      setInterval(getUsername, 5000);
+      setInterval(getUsername, 3000);
     });
   }
 }
