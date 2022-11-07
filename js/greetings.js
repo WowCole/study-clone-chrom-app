@@ -21,6 +21,15 @@ function onClickResetbtn() {
 }
 resetbtn.addEventListener("click", onClickResetbtn);
 
+if (savedUsername === null) {
+  loginForm.classList.remove("hidden");
+  loginForm.addEventListener("submit", onLonginSubmit);
+  screens.forEach((element) => {
+    element.classList.add("hidden");
+  });
+} else {
+  SayHello();
+}
 function SayHello(username) {
   if (savedUsername === null) {
     document.querySelector("#greeting").innerText = `Hello ${username}!`;
@@ -65,5 +74,3 @@ function getUsername(username) {
     greeting.classList.remove("hidden");
   }
 }
-
-SayHello();
